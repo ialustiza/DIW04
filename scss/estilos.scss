@@ -1,0 +1,291 @@
+/* Creamos 5 variables:*/
+$txuria: #ffffff;
+$grisIluna: #343234;
+$grisArgia: #9A9A9D;
+$beltza: rgba(0, 0, 0, .10);
+$handitu: scale(1.1);
+$hizkiMota: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$hizkiTamaina: 62.5%;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $hizkiTamaina;
+    font-family: $hizkiMota;
+}
+
+body {
+    background-color: $txuria;
+    box-shadow: 0 0 0.1em $beltza;
+    margin: 0 auto;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    grid-template-areas: "span span span span" "header header header header" "portada portada portada portada" "filtros filtros filtros filtros" "items items items items" "footer footer footer footer";
+    column-gap: 0.5em;
+    row-gap: 0.5em;
+}
+
+/* Estilos de encabezado y navegacion*/
+span {
+    grid-area: span;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    background-color: $beltza;
+    max-height: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+}
+
+header {
+    grid-area: header;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    flex-basis: 25%;
+    font-size: 2.4em;
+    
+        a {
+            text-decoration: none;
+            color: $grisIluna;
+
+            img {
+                width: 1em;
+                height: 1em;
+                margin: 0 auto;
+
+                &:hover {
+                    transform: $handitu;
+                }
+            }
+        }
+
+        &:hover {
+            transform: $handitu;
+        }
+}
+
+nav {
+    flex-basis: 60%;
+
+    ul li {
+        display: inline-block;
+        margin: 1em;
+        font-size: 1.8em;
+        color: $grisIluna;
+
+        &:hover {
+            color: #7a377a;
+            text-decoration: underline;
+        }
+    }
+}
+
+/*Propiedades para los iconos de encabezado y footer*/
+#iconos {
+    justify-content: space-between;
+
+    .img {
+        width: 2.5em;
+        height: 2.5em;
+        margin: 0.8em;
+
+        &:hover {
+            transform: $handitu;
+        }
+    }
+}
+
+/* Estilos de diferentes secciones*/
+
+.portada {
+    grid-area: portada;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    article p {
+        color: $grisIluna;
+        font-size: 6.2em;
+
+        img {
+            max-height: 60em;
+        }
+    }
+}
+
+.filtros {
+    grid-area: filtros;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: flex;
+    justify-content: center;
+
+    article select {
+        border: none;
+        padding: 1em;
+        margin: 0.8em;
+        border-radius: 1.4em;
+    }
+}
+
+.items {
+    grid-area: items;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    article {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 0 0.2em $beltza;
+        border-radius: 0.5em;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0.5em;
+
+        img {
+            height: 20em;
+            width: 15em;
+            margin: 1.2em;
+        }
+        h3 {
+            color: $grisIluna;
+            margin: 0;
+        }
+        p  {
+            font-size: 1.2em;
+            color: grisArgia;
+        }        
+    }
+}
+
+a img {
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0.25em;
+
+    &:hover {
+        transform: $handitu;
+    }
+}
+
+.compare {
+    display: flex;
+    justify-content: center;
+
+    table {
+        margin: 1em;
+
+        th {
+            box-shadow: 0 0 0 0.2em $beltza;
+            border-radius: 0.5em;
+        }
+        img {
+            width: 2.5em;
+            height: 2.5em;
+        }
+
+        &:hover {
+            transform: none;
+        }
+    }
+}
+
+h2 {
+    grid-area: portada;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: flex;
+    justify-content: center;
+}
+
+.login {
+    grid-area: filtros;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    table {
+        width: 15em;
+        box-shadow: 0 0 0 0.2em $beltza;
+    }
+}
+
+.compra {
+    grid-area: filtros;
+    display: flex;
+    justify-content: space-between;
+
+    article {
+        box-shadow: 0 0 0 0.2em $beltza;
+    }
+}
+
+.gris {
+    font-size: 0.7em;
+    color: grisArgia;
+}
+
+table img {
+    height: 15em;
+    width: 10em;
+}
+
+/* Estilo de footer*/
+
+footer {
+    grid-area: footer;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    background-color: $beltza;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    a {
+        text-decoration: none;
+    }
+    ul {
+        flex-basis: 25%;
+        font-size: 1em;
+
+        p {
+            font-size: 1.4em;
+        }
+        li {
+            color: $grisIluna;
+            display: block;
+            font-size: 1.3em;
+        }
+    }
+    form {
+        flex-basis: 25%;
+        font-size: 1.4em;
+    }
+    button {
+        border: none;
+        padding: 1em;
+        border-radius: 1.4em;
+        color:$txuria;
+        background-color: $grisIluna;
+
+        &:hover {
+            border-radius: 3em;
+            box-shadow: 0 0 3em $beltza;
+        }
+    }
+}

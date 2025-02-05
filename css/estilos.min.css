@@ -1,0 +1,265 @@
+/* Creamos 5 variables:*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-template-areas: "span span span span" "header header header header" "portada portada portada portada" "filtros filtros filtros filtros" "items items items items" "footer footer footer footer";
+  -moz-column-gap: 0.5em;
+       column-gap: 0.5em;
+  row-gap: 0.5em;
+}
+
+/* Estilos de encabezado y navegacion*/
+span {
+  grid-area: span;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  background-color: rgba(0, 0, 0, 0.1);
+  max-height: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8em;
+}
+
+header {
+  grid-area: header;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1 {
+  flex-basis: 25%;
+  font-size: 2.4em;
+}
+h1 a {
+  text-decoration: none;
+  color: #343234;
+}
+h1 a img {
+  width: 1em;
+  height: 1em;
+  margin: 0 auto;
+}
+h1 a img:hover {
+  transform: scale(1.1);
+}
+
+h1:hover {
+  transform: scale(1.1);
+}
+
+nav {
+  flex-basis: 60%;
+}
+nav ul li {
+  display: inline-block;
+  margin: 1em;
+  font-size: 1.8em;
+  color: #343234;
+}
+nav ul li:hover {
+  color: #7a377a;
+  text-decoration: underline;
+}
+
+/*Propiedades para los iconos de encabezado y footer*/
+#iconos {
+  justify-content: space-between;
+}
+#iconos .img {
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0.8em;
+}
+#iconos .img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos de diferentes secciones*/
+.portada {
+  grid-area: portada;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.portada article p {
+  color: #343234;
+  font-size: 6.2em;
+}
+.portada article p img {
+  max-height: 60em;
+}
+
+.filtros {
+  grid-area: filtros;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: flex;
+  justify-content: center;
+}
+.filtros article select {
+  border: none;
+  padding: 1em;
+  margin: 0.8em;
+  border-radius: 1.4em;
+}
+
+.items {
+  grid-area: items;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.items article {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0 0.2em rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0.5em;
+}
+.items article :hover {
+  transform: scale(1.1);
+}
+.items article img {
+  height: 20em;
+  width: 15em;
+  margin: 1.2em;
+}
+.items article h3 {
+  color: #343234;
+  margin: 0;
+}
+.items article p {
+  font-size: 1.2em;
+  color: grisArgia;
+}
+
+a img {
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0.25em;
+}
+
+a img:hover {
+  transform: scale(1.1);
+}
+
+.compare {
+  display: flex;
+  justify-content: center;
+}
+.compare table {
+  margin: 1em;
+}
+.compare table th {
+  box-shadow: 0 0 0 0.2em rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+}
+.compare table img {
+  width: 2.5em;
+  height: 2.5em;
+}
+.compare article:hover {
+  transform: none;
+}
+
+h2 {
+  grid-area: portada;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  grid-area: filtros;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login table {
+  width: 15em;
+  box-shadow: 0 0 0 0.2em rgba(0, 0, 0, 0.1);
+}
+
+.compra {
+  grid-area: filtros;
+  display: flex;
+  justify-content: space-between;
+}
+.compra article {
+  box-shadow: 0 0 0 0.2em rgba(0, 0, 0, 0.1);
+}
+
+.gris {
+  font-size: 0.7em;
+  color: grisArgia;
+}
+
+table img {
+  height: 15em;
+  width: 10em;
+}
+
+/* Estilo de footer*/
+footer {
+  grid-area: footer;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+footer a {
+  text-decoration: none;
+}
+footer ul {
+  flex-basis: 25%;
+  font-size: 1em;
+}
+footer ul p {
+  font-size: 1.4em;
+}
+footer ul li {
+  color: #343234;
+  display: block;
+  font-size: 1.3em;
+}
+footer form {
+  flex-basis: 25%;
+  font-size: 1.4em;
+}
+footer button {
+  border: none;
+  padding: 1em;
+  border-radius: 1.4em;
+  color: #ffffff;
+  background-color: #343234;
+}
+footer button :hover {
+  border-radius: 3em;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=estilos.min.css.map */
