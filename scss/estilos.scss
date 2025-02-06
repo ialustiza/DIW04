@@ -13,6 +13,11 @@ $hizkiTamaina: 62.5%;
     grid-column-end: 1;
 }
 
+@mixin flexs() {
+    display: flex;
+    align-items: center;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -38,19 +43,17 @@ body {
 span {
 
     @include grids(span);
+    @include flexs();
     background-color: $beltza;
     max-height: 1.4em;
-    display: flex;
-    align-items: center;
     justify-content: center;
     font-size: 1.8em;
 }
 
 header {
     @include grids(header);
-    display: flex;
+    @include flexs();
     justify-content: space-around;
-    align-items: center;
 }
 
 h1 {
@@ -146,12 +149,11 @@ nav {
     flex-wrap: wrap;
     
     article {
-        display: flex;
+        @include flexs();
         flex-direction: column;
         box-shadow: 0 0 0 0.2em $beltza;
         border-radius: 0.5em;
         justify-content: space-around;
-        align-items: center;
         margin: 0.5em;
 
         img {
@@ -184,7 +186,7 @@ a img {
 }
 
 .compare {
-    display: flex;
+    @include flexs();
     justify-content: center;
 
     table {
@@ -208,7 +210,7 @@ a img {
 
 h2 {
     @include grids(portada);
-    display: flex;
+    @include flexs();
     justify-content: center;
 }
 
@@ -247,9 +249,8 @@ table img {
 
 footer {
     @include grids(footer);
+    @include flexs();
     background-color: $beltza;
-    display: flex;
-    align-items: center;
     justify-content: space-around;
 
     a {
