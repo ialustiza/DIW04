@@ -7,6 +7,12 @@ $handitu: scale(1.1);
 $hizkiMota: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 $hizkiTamaina: 62.5%;
 
+@mixin grids($area) {
+    grid-area: $area;
+    grid-column-start: -1;
+    grid-column-end: 1;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -30,9 +36,8 @@ body {
 
 /* Estilos de encabezado y navegacion*/
 span {
-    grid-area: span;
-    grid-column-start: 1;
-    grid-column-end: -1;
+
+    @include grids(span);
     background-color: $beltza;
     max-height: 1.4em;
     display: flex;
@@ -42,9 +47,7 @@ span {
 }
 
 header {
-    grid-area: header;
-    grid-column-start: 1;
-    grid-column-end: -1;
+    @include grids(header);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -108,9 +111,7 @@ nav {
 /* Estilos de diferentes secciones*/
 
 .portada {
-    grid-area: portada;
-    grid-column-start: 1;
-    grid-column-end: -1;
+    @include grids(portada);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -126,9 +127,7 @@ nav {
 }
 
 .filtros {
-    grid-area: filtros;
-    grid-column-start: 1;
-    grid-column-end: -1;
+    @include grids(filtros);
     display: flex;
     justify-content: center;
 
@@ -141,9 +140,7 @@ nav {
 }
 
 .items {
-    grid-area: items;
-    grid-column-start: 1;
-    grid-column-end: -1;
+    @include grids(items);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -169,7 +166,10 @@ nav {
         p  {
             font-size: 1.2em;
             color: grisArgia;
-        }        
+        }
+        &:hover {
+            transform: $handitu;
+        }      
     }
 }
 
@@ -198,7 +198,8 @@ a img {
             width: 2.5em;
             height: 2.5em;
         }
-
+    }
+    article {
         &:hover {
             transform: none;
         }
@@ -206,9 +207,7 @@ a img {
 }
 
 h2 {
-    grid-area: portada;
-    grid-column-start: 1;
-    grid-column-end: -1;
+    @include grids(portada);
     display: flex;
     justify-content: center;
 }
@@ -217,7 +216,6 @@ h2 {
     grid-area: filtros;
     display: flex;
     justify-content: center;
-    align-items: center;
 
     table {
         width: 15em;
@@ -248,9 +246,7 @@ table img {
 /* Estilo de footer*/
 
 footer {
-    grid-area: footer;
-    grid-column-start: 1;
-    grid-column-end: -1;
+    @include grids(footer);
     background-color: $beltza;
     display: flex;
     align-items: center;

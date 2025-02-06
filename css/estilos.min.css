@@ -24,8 +24,8 @@ body {
 /* Estilos de encabezado y navegacion*/
 span {
   grid-area: span;
-  grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column-start: -1;
+  grid-column-end: 1;
   background-color: rgba(0, 0, 0, 0.1);
   max-height: 1.4em;
   display: flex;
@@ -36,8 +36,8 @@ span {
 
 header {
   grid-area: header;
-  grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column-start: -1;
+  grid-column-end: 1;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -59,7 +59,6 @@ h1 a img {
 h1 a img:hover {
   transform: scale(1.1);
 }
-
 h1:hover {
   transform: scale(1.1);
 }
@@ -94,8 +93,8 @@ nav ul li:hover {
 /* Estilos de diferentes secciones*/
 .portada {
   grid-area: portada;
-  grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column-start: -1;
+  grid-column-end: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -110,8 +109,8 @@ nav ul li:hover {
 
 .filtros {
   grid-area: filtros;
-  grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column-start: -1;
+  grid-column-end: 1;
   display: flex;
   justify-content: center;
 }
@@ -124,8 +123,8 @@ nav ul li:hover {
 
 .items {
   grid-area: items;
-  grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column-start: -1;
+  grid-column-end: 1;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -138,9 +137,6 @@ nav ul li:hover {
   justify-content: space-around;
   align-items: center;
   margin: 0.5em;
-}
-.items article :hover {
-  transform: scale(1.1);
 }
 .items article img {
   height: 20em;
@@ -155,13 +151,15 @@ nav ul li:hover {
   font-size: 1.2em;
   color: grisArgia;
 }
+.items article:hover {
+  transform: scale(1.1);
+}
 
 a img {
   width: 2.5em;
   height: 2.5em;
   margin: 0.25em;
 }
-
 a img:hover {
   transform: scale(1.1);
 }
@@ -187,8 +185,8 @@ a img:hover {
 
 h2 {
   grid-area: portada;
-  grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column-start: -1;
+  grid-column-end: 1;
   display: flex;
   justify-content: center;
 }
@@ -197,7 +195,6 @@ h2 {
   grid-area: filtros;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .login table {
   width: 15em;
@@ -226,8 +223,8 @@ table img {
 /* Estilo de footer*/
 footer {
   grid-area: footer;
-  grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column-start: -1;
+  grid-column-end: 1;
   background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -259,7 +256,7 @@ footer button {
   color: #ffffff;
   background-color: #343234;
 }
-footer button :hover {
+footer button:hover {
   border-radius: 3em;
   box-shadow: 0 0 3em rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=estilos.min.css.map */
